@@ -18,7 +18,6 @@
 @property (nonatomic, strong, readwrite) UIImage *currentFrame;
 @property (nonatomic, assign, readwrite) NSUInteger currentFrameIndex;
 
-@property (nonatomic, assign) NSUInteger loopCountdown;
 @property (nonatomic, assign) NSTimeInterval accumulator;
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
