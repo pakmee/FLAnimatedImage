@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-
+typedef void (^AnimationFinished)();
 @class FLAnimatedImage;
 @protocol FLAnimatedImageViewDebugDelegate;
 
@@ -28,6 +28,7 @@
 @property (nonatomic, strong, readonly) UIImage *currentFrame;
 @property (nonatomic, assign, readonly) NSUInteger currentFrameIndex;
 @property (nonatomic, assign) NSUInteger loopCountdown;
+@property (nonatomic, copy) AnimationFinished animationFinishedCallback;
 
 #if defined(DEBUG) && DEBUG
 // Only intended to report internal state for debugging

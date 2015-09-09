@@ -189,6 +189,9 @@
 - (void)stopAnimating
 {
     if (self.animatedImage) {
+        if(self.animationFinishedCallback){
+            self.animationFinishedCallback();
+        }
         self.displayLink.paused = YES;
     } else {
         [super stopAnimating];
