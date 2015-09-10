@@ -189,9 +189,6 @@
 - (void)stopAnimating
 {
     if (self.animatedImage) {
-        if(self.animationFinishedCallback){
-            self.animationFinishedCallback();
-        }
         self.displayLink.paused = YES;
     } else {
         [super stopAnimating];
@@ -262,6 +259,9 @@
                 // If we've looped the number of times that this animated image describes, stop looping.
                 self.loopCountdown--;
                 if (self.loopCountdown == 0) {
+                    if(self.animationFinishedCallback){
+                        self.animationFinishedCallback();
+                    }
                     [self stopAnimating];
                     return;
                 }
