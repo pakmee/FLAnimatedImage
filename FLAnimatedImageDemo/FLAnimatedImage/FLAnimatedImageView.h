@@ -8,10 +8,9 @@
 
 
 #import <UIKit/UIKit.h>
-typedef void (^AnimationFinished)();
+
 @class FLAnimatedImage;
 @protocol FLAnimatedImageViewDebugDelegate;
-
 
 //
 //  An `FLAnimatedImageView` can take an `FLAnimatedImage` and plays it automatically when in view hierarchy and stops when removed.
@@ -20,6 +19,8 @@ typedef void (^AnimationFinished)();
 //  Under the hood it uses a `CADisplayLink` for playback, which can be inspected with `currentFrame` & `currentFrameIndex`.
 //
 @interface FLAnimatedImageView : UIImageView
+
+typedef void (^AnimationFinished)(FLAnimatedImageView* animaetdImageView);
 
 // Setting `[UIImageView.image]` to a non-`nil` value clears out existing `animatedImage`.
 // And vice versa, setting `animatedImage` will initially populate the `[UIImageView.image]` to its `posterImage` and then start animating and hold `currentFrame`.

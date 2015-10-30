@@ -260,7 +260,7 @@
                 self.loopCountdown--;
                 if (self.loopCountdown == 0) {
                     if(self.animationFinishedCallback){
-                        self.animationFinishedCallback();
+                        self.animationFinishedCallback(self);
                     }
                     [self stopAnimating];
                     return;
